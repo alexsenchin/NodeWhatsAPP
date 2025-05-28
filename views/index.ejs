@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Logger</title>
+    <style>
+        body { font-family: monospace; background: #111; color: #0f0; padding: 20px; }
+        .message { margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>📥 Последние сообщения WhatsApp</h1>
+    <% messages.forEach(msg => { %>
+        <div class="message">
+            <div><strong><%= msg.timestamp.toISOString() %></strong></div>
+            <div>[<%= msg.chatName %>] <%= msg.senderName %> (<%= msg.senderNumber %>):</div>
+            <div><%= msg.message %></div>
+        </div>
+    <% }) %>
+</body>
+</html>
