@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вильоти</title>
+    <style>
+        body { background: #111; color: #0f0; font-family: monospace; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #333; padding: 4px 8px; }
+        th { background-color: #222; }
+    </style>
+</head>
+<body>
+    <h1>📡 Останні вильоти</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Час</th>
+                <th>Позиція</th>
+                <th>Екіпаж</th>
+                <th>Підрозділ</th>
+                <th>Зліт</th>
+                <th>Час (політ)</th>
+                <th>Координати</th>
+                <th>Ціль</th>
+                <th>Очі</th>
+                <th>Борт</th>
+                <th>БК</th>
+                <th>Результат</th>
+                <th>AAR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flights.forEach(flight => { %>
+                <tr>
+                    <td><%= flight.timestamp.toISOString() %></td>
+                    <td><%= flight.position %></td>
+                    <td><%= flight.crew %></td>
+                    <td><%= flight.unit %></td>
+                    <td><%= flight.sortie %></td>
+                    <td><%= flight.time %></td>
+                    <td><%= flight.coords %></td>
+                    <td><%= flight.target %></td>
+                    <td><%= flight.eyes %></td>
+                    <td><%= flight.aircraft %></td>
+                    <td><%= flight.ammo %></td>
+                    <td><%= flight.result %></td>
+                    <td><%= flight.aar %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
